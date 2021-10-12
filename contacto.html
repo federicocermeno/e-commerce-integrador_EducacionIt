@@ -1,13 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="sass/main.css">
+    <script src="https://kit.fontawesome.com/f1a7eb1709.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <header class="main-header">
+
+        <input type="checkbox" id="menu">
+
+
+        
+        <nav class="nav-bar">
+            <ul class="nav-bar__nav-list">
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="alta.html">Alta</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="contacto.html">Contacto</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="nosotros.html">Nosotros</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <div class="search-bar__logo-container">
+                <a href="index.html">
+                    <img src="img/logo/header-logo.png" alt="">
+                </a>
+            </div>
+            <form class=" search-bar__form-container">
+                <label class="search-bar__form-label" for="busqueda"></label>
+                <input class="search-bar__form-search" id="busqueda" type="search" placeholder="¿Que estás buscando?">
+                <button class="search-bar__form-submit" type="submit">
+                    <img src="img/logo/search.png" alt="">
+                </button>
+            </form>
+            <div class="search-bar__carrito-container">
+                <i class="fas fa-shopping-cart fa-2x"></i>
+            </div>
+            <div class="menu-toggle">
+                <label class="menu-toggle__label" for="menu">
+                    <span class="menu-toggle__pan-arriba"></span>
+                    <span class="menu-toggle__medallon"></span>
+                    <span class="menu-toggle__pan-abajo"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
     <h1>Contacto</h1>
+
+    <form action="action.php" class="form-contacto">
+        <fieldset>
+            <div class="name">
+                <label for="nombre"></label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="email">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Correo electronico">
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="message">
+                <label for="mensaje"></label>
+                <input type="textarea" name="mensaje" id="mensaje" placeholder="Escribe tu mensaje*">
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="contacto-imagen">
+        <img src="img/backgrounds/logo.png" alt="">
+    </div>
 </body>
+
+
+
+<footer>
+    <div class="footer__content">
+        <div class="footer__content-logo">
+            <img src="img/logo/header-logo.png" alt="">
+        </div>
+        <div class="footer__content-payment">
+            <div>
+                <h3>Formas de pago</h3>
+                <div class="footer__content-payment-method">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-btc"></i> 
+                </div> 
+            </div>
+        </div>
+        
+    </div>
+    
+</footer>
 </html>

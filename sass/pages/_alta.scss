@@ -1,0 +1,63 @@
+.alta_title {
+    font-family: 'Julius Sans One', sans-serif;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+
+}
+
+.form-alta {
+    margin: 0 20%;
+    background-color: transparent;
+}
+
+fieldset {
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+label {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+
+}
+
+input,
+select,
+textarea {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+    justify-content: center
+}
+
+option {
+    font-weight: 600;
+}
+
+.separador {
+    border-bottom: 2px solid grey;
+    margin: 10px 0;
+    width: 50%;
+}
+
+.shipping {
+    display: flex;
+
+    input[type=checkbox] {
+        transform: scale(1.5);
+        width: 10%;
+        margin-left: 0;
+    }
+}
+
+.submit {
+    margin-top: 2%;
+    width: 15%;
+    height: auto;
+}

@@ -1,13 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>CONNECTICUS - Alta Producto</title>
+    <link rel="stylesheet" href="sass/main.css">
+    <script src="https://kit.fontawesome.com/f1a7eb1709.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Alta</h1>
+    <header class="main-header">
+
+        <input type="checkbox" id="menu">
+
+
+        
+        <nav class="nav-bar">
+            <ul class="nav-bar__nav-list">
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="alta.html">Alta</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="contacto.html">Contacto</a>
+                </li>
+                <li class="nav-bar__nav-item">
+                    <a class="nav-bar__nav-link" href="nosotros.html">Nosotros</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <div class="search-bar__logo-container">
+                <a href="index.html">
+                    <img src="img/logo/header-logo.png" alt="">
+                </a>
+            </div>
+            <form class=" search-bar__form-container">
+                <label class="search-bar__form-label" for="busqueda"></label>
+                <input class="search-bar__form-search" id="busqueda" type="search" placeholder="¿Que estás buscando?">
+                <button class="search-bar__form-submit" type="submit">
+                    <img src="img/logo/search.png" alt="">
+                </button>
+            </form>
+            <div class="search-bar__carrito-container">
+                <i class="fas fa-shopping-cart fa-2x"></i>
+            </div>
+            <div class="menu-toggle">
+                <label class="menu-toggle__label" for="menu">
+                    <span class="menu-toggle__pan-arriba"></span>
+                    <span class="menu-toggle__medallon"></span>
+                    <span class="menu-toggle__pan-abajo"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+
+
+    <form action="action.php" class="form-alta">
+        <div class="main_div">
+            <fieldset>
+                <div class="nombre-producto">
+                    <label for="nombre">Nombre de producto</label>
+                    <div class="separador"></div>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ej: Samsung Galaxy Watch Active 2"
+                        required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="precio-producto">
+                    <label for="precio">¿Cual es el precio?</label>
+                    <div class="separador"></div>
+                    <input type="number" name="precio" id="precio" placeholder="Introduzca precio del producto"
+                        required>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="stock-producto">
+                    <label for="stock">Stock</label>
+                    <div class="separador"></div>
+                    <select name="stock" id="stock" required>
+                        <option value="">-Seleccione stock-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="marca-producto">
+                    <label for="marca">Marca</label>
+                    <div class="separador"></div>
+                    <select name="marca" id="marca" required>
+                        <option value="">-Seleccione la marca-</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Xiaomi">Xiaomi</option>
+                        <option value="Garmin">Garmin</option>
+                        <option value="Huawei">Huawei</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="categoria-producto">
+                    <label for="categoria">Seleccione una categoria</label>
+                    <div class="separador">
+
+                    </div>
+                    <select name="categoria" id="categoria" required>
+                        <optgroup label="Smartwatch">
+                            <option value="hombreW">Hombre</option>
+                            <option value="mujerW">Mujer</option>
+                        </optgroup>
+                        <optgroup label="Smartband">
+                            <option value="hombreB">Hombre</option>
+                            <option value="mujerB">Mujer</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="foto-producto">
+                    <label for="foto">Foto de producto</label>
+                    <div class="separador">
+
+                    </div>
+                    <input type="file" name="foto" id="foto" required accept="image/*">
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="detalles-producto">
+                    <label for="detalles">Detalles</label>
+                    <div class="separador">
+
+                    </div>
+                    <textarea name="detalles" id="detalles" cols="30" rows="3"
+                        placeholder="Introduce una pequeña descripcion del producto"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="shipping">
+                    <label for="envio-sin-cargo">Envio sin cargo</label>
+                    <input type="checkbox">
+                </div>
+            </fieldset>
+            <input type="image" src="img/logo/send.png" alt="Enviar producto" class="submit">
+
+        </div>
+    </form>
+
+
+    <footer>
+        <div class="footer__content">
+            <div class="footer__content-logo">
+                <img src="img/logo/header-logo.png" alt="">
+            </div>
+            <div class="footer__content-payment">
+                <div>
+                    <h3>Formas de pago</h3>
+                    <div class="footer__content-payment-method">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-btc"></i> 
+                    </div> 
+                </div>
+            </div>
+            
+        </div>
+        
+    </footer>
 </body>
 </html>

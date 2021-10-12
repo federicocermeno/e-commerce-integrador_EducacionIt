@@ -1,0 +1,30 @@
+.footer__content {
+    padding: 20px 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    }
+    .footer__content-payment {
+    font-size: 20px;
+    padding-left: 5px;
+    }
+    .footer__content-payment h3 {
+    letter-spacing: 12px;
+    margin-bottom: 5px;
+    }
+    .footer__content-payment-method {
+    text-align: center;
+    }
+    .footer__content-payment-method i {
+    letter-spacing: 5px;
+    font-size: 35px;
+    }
+    @media (max-width: 768px) {
+    .footer__content {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+    }
+}
