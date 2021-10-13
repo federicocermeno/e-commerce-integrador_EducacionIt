@@ -1,10 +1,10 @@
 .meetus {
-    width: 100%;
-    height: 47em;
-    background-image: url(../../img/backgrounds/us2.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    
+
+    margin-bottom: -5px;
+    & img {
+        width: 100%; 
+        height: 43em; 
+    }
 
     & p {
         text-align: center;
@@ -25,6 +25,7 @@
     background-color: #000;
     height: 21em;
     padding: 4em 5em;
+    
 
 
     p {
@@ -34,31 +35,240 @@
         text-align: center;
         font-weight: 100;
         font-family: "Playfair Display", serif;
-    }
 
     }
+
+}
 
 .meeet {
-    display: flex;
+    display: block;
     flex-direction: column;
 }
 
 .map {
     display: flex;
-    width: 100%;
-    height: 35em;
+    height: 40em;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
+    width: 100%;
+    background-color: #EDEDED;
+    margin: auto;
 
+    &__container {
+        width: 40%;
+        height: 20px;
+    }
     & p {
-      font-family: "Playfair Display", serif;  
-      font-size: 50px;
-      padding-bottom: 20px;
+        font-family: "Playfair Display", serif;  
+        font-size: 48px;
+        padding-bottom: 20px;
+        text-align: center;
+
     }
     
 
     & img {
-        width: 45em;
-    };
+        width: 100%;
+
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 1.2s;
+        }
+    }
 }
+
+
+.objectives-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #EDEDED;
+    border-top: 5px inset black;
+
+    &_proyect__article{
+        background-color: #fff;
+        width: 700px;
+        height: 500px;
+        margin: 4em;
+        -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+        box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
+
+        & img {
+            height: 233px;
+            width: 100%;
+        }
+
+        & h3 {
+            font-weight: bold;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 30px;
+            background-color: #fff;
+            font-family: 'Julius Sans One', sans-serif;
+        }
+
+        & p {
+            text-align: justify;
+            padding: 25px;
+            font-family: serif;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+    .map {
+        
+
+        &__container {
+        
+
+            & img {
+                width: 100%;
+            }
+
+
+        }
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .meetus {
+
+        & img {
+            height: 23em;
+        }
+    }
+
+    .description {
+        height: 14em;
+        padding: 2em 2em;
+
+    & p {
+        font-size: 19px;
+        letter-spacing: 2px;
+        text-align: justify;
+        font-family: unset;
+    }
+    }
+
+
+
+    .map {
+        height: 30em;
+
+        img {
+            height: 19em;
+        }
+
+        & p {
+            font-size: 32px;
+        }
+    }
+
+    .objectives-container {
+        flex-wrap: wrap;
+        padding-bottom: 50px;
+        padding-top: 30px;
+        border: 0;
+
+        & article {
+            margin: 1em 0em;
+        height: 403px;
+        box-shadow: 0;
+        box-shadow: 2px 2px 2px;
+        width: 47%;
+        }
+    
+    }
+
+}
+
+
+@media (min-width: 360px) and (max-width: 768px) {
+    .meetus {
+
+        & img {
+            height: 12em;
+        }
+    }
+
+    .description {
+        height: 14em;
+        padding: 2em 2em;
+
+    & p {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-align: justify;
+        font-family: unset;
+    }
+    }
+
+
+
+    .map {
+        height: 15em;
+
+        & p {
+            font-size: 27px;
+        }
+
+        & img {
+            height: 100px;
+        }
+    }
+
+    .objectives-container {
+        flex-wrap: wrap;
+        padding-bottom: 50px;
+        padding-top: 30px;
+        border: 0;
+
+        & article {
+            margin: 1em 1.5em;
+            height: 430px;
+            box-shadow: 0;
+            box-shadow: 2px 2px 2px;
+        }
+    
+    }
+}
+
+@media (min-width:1025px) and (max-width: 1280px) {
+    .map {
+        height: 30em;
+
+
+    }
+
+
+    .objectives-container {
+
+        & article {
+            background-color: #fff;
+            width: 700px;
+            height: 500px;
+            margin: 0.9em;
+            box-shadow: 2px 2px 2px
+        }
+    }
+}
+
+
+
