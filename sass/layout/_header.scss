@@ -16,7 +16,9 @@
 }
 
 #menu:checked~.search-bar .menu-toggle__label {
-    background-color: purple;
+    background-color: #000;
+    color: #fff;
+    transition: 1s;
 }
 
 .section-cards__header {
@@ -207,12 +209,18 @@
 
     .search-bar {
         display: block;
-        padding: 0 16px;
-        
-        
+        padding: 0px 16px 24px;
 
         &__carrito-container {
             display: inline-block;
+            margin: 0;
+            padding: 0;
+            width: 10%;
+            vertical-align: middle;
+
+            .fa-2x {
+                font-size: 20px;
+            }
         }
 
         &__logo-container {
@@ -227,9 +235,50 @@
         padding: 0;
         width: 70%;
         }
+        
+        &__form-search {
+            font-size: small;
+            display: inline-block;
+            width: 90%;
+            margin: 0;
+        }
+
+        &__form-submit {
+            float: right;
+        }
 
         .menu-toggle {
             display: inline-block;
+            width: 10%;
+            height: 22px;
+            vertical-align: middle;
+            background-color: transparent;
+
+            &__label {
+                position: relative;
+                background-color: transparent;
+            }
+
+            &__pan-arriba,
+            &__medallon,
+            &__pan-abajo {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+
+            &__pan-arriba {
+                top: 0;
+            }
+        
+            &__medallon {
+                top: calc(50%);
+                transform: translateY(-50%);
+            }
+        
+            &__pan-abajo {
+                bottom: 0;
+            }
         }
     
     }

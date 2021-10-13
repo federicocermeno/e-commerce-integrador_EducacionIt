@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONNECTICUS - Alta Producto</title>
     <link rel="stylesheet" href="sass/main.css">
+    <link rel="shortcut icon" href="img/logo/favicon.png">
     <script src="https://kit.fontawesome.com/f1a7eb1709.js" crossorigin="anonymous"></script>
 </head>
 
@@ -63,8 +64,8 @@
 
 
     <form action="action.php" class="form-alta">
-        <div class="main_div">
-            <fieldset>
+        <h2 class="form-alta_title">Alta de producto</h2>
+            <fieldset class="form-alta_fieldset">
                 <div class="nombre-producto">
                     <label for="nombre">Nombre de producto</label>
                     <div class="separador"></div>
@@ -73,7 +74,7 @@
                 </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="precio-producto">
                     <label for="precio">¿Cual es el precio?</label>
                     <div class="separador"></div>
@@ -81,7 +82,7 @@
                         required>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="stock-producto">
                     <label for="stock">Stock</label>
                     <div class="separador"></div>
@@ -100,7 +101,7 @@
                     </select>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="marca-producto">
                     <label for="marca">Marca</label>
                     <div class="separador"></div>
@@ -114,7 +115,7 @@
                     </select>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="categoria-producto">
                     <label for="categoria">Seleccione una categoria</label>
                     <div class="separador">
@@ -132,7 +133,7 @@
                     </select>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="foto-producto">
                     <label for="foto">Foto de producto</label>
                     <div class="separador">
@@ -141,7 +142,7 @@
                     <input type="file" name="foto" id="foto" required accept="image/*">
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="detalles-producto">
                     <label for="detalles">Detalles</label>
                     <div class="separador">
@@ -152,15 +153,13 @@
                 </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="form-alta_fieldset">
                 <div class="shipping">
                     <label for="envio-sin-cargo">Envio sin cargo</label>
                     <input type="checkbox">
                 </div>
             </fieldset>
             <input type="image" src="img/logo/send.png" alt="Enviar producto" class="submit">
-
-        </div>
     </form>
 
 
@@ -170,19 +169,15 @@
                 <img src="img/logo/header-logo.png" alt="">
             </div>
             <div class="footer__content-payment">
-                <div>
-                    <h3>Formas de pago</h3>
-                    <div class="footer__content-payment-method">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                        <i class="fab fa-btc"></i> 
-                    </div> 
-                </div>
-            </div>
-            
+                <h3>Formas de pago</h3>
+                <div class="footer__content-payment-method">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-btc"></i> 
+                </div>    
+            </div>  
         </div>
-        
     </footer>
 </body>
 </html>

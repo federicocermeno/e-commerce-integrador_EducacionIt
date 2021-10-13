@@ -4,20 +4,29 @@
     text-align: center;
     text-transform: uppercase;
     font-style: italic;
-
 }
 
 .form-alta {
-    margin: 0 20%;
-    background-color: transparent;
+    margin: 100px 30%;
+    background-color: #EDEDED;
+    border: 2px solid pink;
+    padding: 20px;
+
+    &_title {
+        text-align: center;
+        font-family: 'Julius Sans One', sans-serif;
+        font-weight: bold;
+        font-size: 32px;
+    }
+
+    &_fieldset {
+        margin-top: 5%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+    }
 }
 
-fieldset {
-    margin-top: 5%;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-}
 
 label {
     font-family: 'Julius Sans One', sans-serif;
@@ -61,3 +70,32 @@ option {
     width: 15%;
     height: auto;
 }
+
+@media (max-width: 768px) {
+    .form-alta {
+        margin: 10px 20px;
+    }
+
+    .submit {
+        width: 25%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .form-alta {
+        margin: 10px 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .form-alta {
+        margin: 10px 20px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .form-alta {
+        margin: 10px 30%;
+    }
+}
+

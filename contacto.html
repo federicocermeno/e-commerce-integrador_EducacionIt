@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>CONNECTICUS</title>
     <link rel="stylesheet" href="sass/main.css">
+    <link rel="shortcut icon" href="img/logo/favicon.png">
     <script src="https://kit.fontawesome.com/f1a7eb1709.js" crossorigin="anonymous"></script>
 </head>
 
@@ -60,54 +61,43 @@
         </div>
     </header>
 
-    <h1>Contacto</h1>
 
-    <form action="action.php" class="form-contacto">
-        <fieldset>
-            <div class="name">
+    <div class="form-back"> 
+        <form action="action.php" class="form-contact">
+            <header class="form-contact_header">Envía tu consulta</header>
+            <div class="form-contact_name">
                 <label for="nombre"></label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
+                <input type="text" id="nombre" name="nombre" placeholder="NOMBRE COMPLETO" required>
             </div>
-        </fieldset>
-        <fieldset>
-            <div class="email">
+            <div class="form-contact_email">
                 <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="Correo electronico">
+                <input type="email" id="email" name="email" placeholder="CORREO ELECTRONICO" required>
             </div>
-        </fieldset>
-        <fieldset>
-            <div class="message">
+        
+            <div class="form-contact_message">
                 <label for="mensaje"></label>
-                <input type="textarea" name="mensaje" id="mensaje" placeholder="Escribe tu mensaje*">
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="ESCRIBE TU MENSAJE" required></textarea>
             </div>
-        </fieldset>
-    </form>
 
-    <div class="contacto-imagen">
-        <img src="img/backgrounds/logo.png" alt="">
+            <input type="submit" class="form-contact_submit">
+        </form>
     </div>
-</body>
-
-
-
-<footer>
-    <div class="footer__content">
-        <div class="footer__content-logo">
-            <img src="img/logo/header-logo.png" alt="">
-        </div>
-        <div class="footer__content-payment">
-            <div>
+    <footer>
+        <div class="footer__content">
+            <div class="footer__content-logo">
+                <img src="img/logo/header-logo.png" alt="">
+            </div>
+            <div class="footer__content-payment">
+                
                 <h3>Formas de pago</h3>
                 <div class="footer__content-payment-method">
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
                     <i class="fab fa-cc-paypal"></i>
                     <i class="fab fa-btc"></i> 
-                </div> 
-            </div>
+                </div>    
+            </div>  
         </div>
-        
-    </div>
-    
-</footer>
+    </footer>
+</body>
 </html>

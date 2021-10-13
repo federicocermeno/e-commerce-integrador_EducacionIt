@@ -1,0 +1,64 @@
+.meetus {
+    width: 100%;
+    height: 47em;
+    background-image: url(../../img/backgrounds/us2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+
+    & p {
+        text-align: center;
+        font-size: 76px;
+        color: white;
+        font-family: "Playfair Display", serif;
+        position: relative;
+        top: 1.3em;
+        left: 13.5em;
+        width: 1em;
+        
+    }
+
+}
+
+.description {
+    width: 100%;
+    background-color: #000;
+    height: 21em;
+    padding: 4em 5em;
+
+
+    p {
+        color: #fff;
+        font-size: 24px;
+        letter-spacing: 4px;
+        text-align: center;
+        font-weight: 100;
+        font-family: "Playfair Display", serif;
+    }
+
+    }
+
+.meeet {
+    display: flex;
+    flex-direction: column;
+}
+
+.map {
+    display: flex;
+    width: 100%;
+    height: 35em;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+
+    & p {
+      font-family: "Playfair Display", serif;  
+      font-size: 50px;
+      padding-bottom: 20px;
+    }
+    
+
+    & img {
+        width: 45em;
+    };
+}
