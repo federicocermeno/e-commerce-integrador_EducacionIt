@@ -674,7 +674,7 @@ option {
     background-color: #A4A9F6;
     color: #000;
     padding: 11px 19%;
-    margin: 71px 0px 10px;
+    margin: 0 0 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -700,6 +700,7 @@ option {
   }
 }
 .meetus {
+  display: flex;
   margin-bottom: -5px;
 }
 .meetus img {
@@ -838,7 +839,7 @@ option {
   }
   .objectives-container article {
     margin: 1em 0em;
-    height: 403px;
+    height: 423px;
     box-shadow: 0;
     box-shadow: 2px 2px 2px;
     width: 47%;
@@ -878,7 +879,7 @@ option {
   }
   .objectives-container article {
     margin: 1em 1.5em;
-    height: 430px;
+    height: 460px;
     box-shadow: 0;
     box-shadow: 2px 2px 2px;
   }

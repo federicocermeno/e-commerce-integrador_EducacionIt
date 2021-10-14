@@ -1,5 +1,5 @@
 .meetus {
-
+    display: flex;
     margin-bottom: -5px;
     & img {
         width: 100%; 
@@ -121,15 +121,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
 @media (min-width: 1024px) {
     .map {
         
@@ -189,7 +180,7 @@
 
         & article {
             margin: 1em 0em;
-        height: 403px;
+        height: 423px;
         box-shadow: 0;
         box-shadow: 2px 2px 2px;
         width: 47%;
@@ -242,7 +233,7 @@
 
         & article {
             margin: 1em 1.5em;
-            height: 430px;
+            height: 460px;
             box-shadow: 0;
             box-shadow: 2px 2px 2px;
         }
