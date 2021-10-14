@@ -877,11 +877,14 @@ option {
     padding-top: 30px;
     border: 0;
   }
-  .objectives-container article {
+  .objectives-container_proyect__article {
     margin: 1em 1.5em;
     height: 460px;
     box-shadow: 0;
     box-shadow: 2px 2px 2px;
+  }
+  .objectives-container_proyect__article p {
+    padding: 13px;
   }
 }
 @media (min-width: 1025px) and (max-width: 1280px) {
