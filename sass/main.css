@@ -835,7 +835,7 @@ option {
     flex-wrap: wrap;
     padding-bottom: 50px;
     padding-top: 30px;
-    border: 0;
+    border: 0px;
   }
   .objectives-container article {
     margin: 1em 0em;
