@@ -60,8 +60,15 @@
 
 @media (max-width: 768px) {
     .slider {
-        width: 80%;
+        width: 100%;
+        margin: 0 auto;
 
     }
 
+}
+
+@media (max-width:1024px) {
+    .slider{
+    width: 80%;
+     }
 }

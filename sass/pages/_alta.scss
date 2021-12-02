@@ -69,7 +69,13 @@ option {
     margin-top: 2%;
     width: 15%;
     height: auto;
+
+    &:hover {
+        transform: rotate(360deg);
+        transition: .5s;
+    }
 }
+
 
 @media (max-width: 768px) {
     .form-alta {
