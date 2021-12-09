@@ -16,9 +16,28 @@
 }
 
 #menu:checked~.search-bar .menu-toggle__label {
-    background-color: #000;
+   /*  background-color: #000; */
     color: #fff;
-    transition: 1s;
+    /* transition: .4s;
+    transform: rotate(180deg); */
+    .menu-toggle__pan-arriba {
+        top: calc(50%);
+        transform: rotate(45deg);
+        transition: 0.4s;
+    }
+
+    .menu-toggle__pan-abajo {
+        top: calc(50%);
+        transform: rotate(-45deg);
+        transition: 0.4s;
+        
+    }
+
+    .menu-toggle__medallon {
+        display: none;
+        transition: 0.4s;
+    }
+
 }
 
 .section-cards__header {
@@ -132,6 +151,11 @@
         padding: 0 20px;
         margin: 30px 1px;
 
+        &:hover {
+            cursor: pointer;
+            color: blue;
+        }
+
     }
 
 
@@ -169,6 +193,7 @@
         left: .5em;
         right: .5em;
         margin: 30px auto;
+        
     }
 
     &__pan-arriba {
