@@ -25,6 +25,13 @@
         border-radius: 10px;
         background-color: #fff;
     }
+
+    & div {
+        border: 1px solid red;
+        background-color: yellow;
+        display: none;
+
+    }
 }
 
 
@@ -69,11 +76,45 @@ option {
     margin-top: 2%;
     width: 15%;
     height: auto;
+    cursor: pointer;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 
-    &:hover {
-        transform: rotate(360deg);
-        transition: .5s;
+    & img {
+        width: 84%;
+        height: auto;
+        border: 0;
     }
+
+}
+
+table, th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-transform: capitalize;
+}
+
+table {
+    width: 90%;
+    text-align: center;
+}
+
+#listado-productos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+th,td {
+    padding: 5px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
 }
 
 

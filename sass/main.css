@@ -284,9 +284,19 @@ header p {
   background-attachment: scroll;
 }
 
+.active {
+  font-weight: bold;
+  color: red;
+}
+
 /*********************************
             HEADER
 *********************************/
+.active {
+  font-weight: bold;
+  color: red;
+}
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -375,6 +385,11 @@ header p {
   background-size: 0% 2px;
   -webkit-transition: background-size .3s;
   transition: background-size .3s;
+}
+
+.nav-bar__nav-link .active {
+  font-weight: bold;
+  color: red;
 }
 
 .nav-bar__nav-link:hover {
@@ -605,7 +620,6 @@ header p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #fff;
 }
 
 .footer__content-payment {
@@ -633,6 +647,10 @@ header p {
     text-align: center;
     padding-bottom: 10px;
   }
+}
+
+footer {
+  background-color: #cdcdcd;
 }
 
 .section-cards {
@@ -699,6 +717,12 @@ body {
   background-color: #fff;
 }
 
+.form-alta div {
+  border: 1px solid red;
+  background-color: yellow;
+  display: none;
+}
+
 label {
   font-family: 'Julius Sans One', sans-serif;
   font-weight: 900;
@@ -746,13 +770,50 @@ option {
   margin-top: 2%;
   width: 15%;
   height: auto;
+  cursor: pointer;
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.submit:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  -webkit-transition: .5s;
-  transition: .5s;
+.submit img {
+  width: 84%;
+  height: auto;
+  border: 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-transform: capitalize;
+}
+
+table {
+  width: 90%;
+  text-align: center;
+}
+
+#listado-productos {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+th, td {
+  padding: 5px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

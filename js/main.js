@@ -1,6 +1,6 @@
 console.log(document.querySelector('title').textContent)
 
-
+function start() {  
 //function ajax(url, metodo = 'get') {    // argumentos con valores por default
 function ajax(url, metodo) {    // argumentos con valores por default
     let xhr = new XMLHttpRequest
@@ -12,7 +12,9 @@ function ajax(url, metodo) {    // argumentos con valores por default
 
 function getNombreArchivo(id) {
     //return 'plantillas/' + (id? id : 'home') + '.html'      // operador ternario
-    return 'plantillas/' + (id || 'home') + '.html'      // short circuit operator
+    //return 'vistas/' + (id || 'inicio') + '.html'      // short circuit operator
+    return 'vistas/' + id + '.html'
+
 }
 
 function marcarLink(id) {
@@ -23,21 +25,46 @@ function marcarLink(id) {
     })
 }
 
-function cargarPlantillas() {
-    let main = document.querySelector('main')
+function initJS(id) {
+    if(id == 'alta') {
+        initAlta()
+    }
+    else if(id == 'inicio') {
+        initInicio()
+    }
+    else if(id == 'nosotros') {
+        initNosotros()
+    }
+    else if(id == 'contacto') {
+        initContacto()
+    }
 
-    /* Carga inicial de la vista determinada por la url visitada */
-    let id = location.hash.slice(1)
-    marcarLink(id)
+}
 
+function cargarPlantilla(id) {
     let archivo = getNombreArchivo(id)
     let xhr = ajax(archivo)
     xhr.addEventListener('load', () => {
         if (xhr.status == 200) {
             let plantilla = xhr.response
+
+            //carga del codigo de vista (html) de la plantilla
+            let main = document.querySelector('main')
             main.innerHTML = plantilla
+
+            //carga del codigo script js de la plantilla
+            initJS(id)
         }
     })
+}
+
+function cargarPlantillas() {
+    /* Carga inicial de la vista determinada por la url visitada */
+    let id = location.hash.slice(1)
+    marcarLink(id)
+    cargarPlantilla(id)
+    /* ------------------------------------------------- */
+    
 
     /* Carga de cada uno de los contenidos según la bavegación local */
     let links = document.querySelectorAll('a')
@@ -48,26 +75,23 @@ function cargarPlantillas() {
             e.preventDefault()
 
             let id = link.id
-            console.log(id)
+            //console.log(id)
             location.hash = id
         })
     })
 
     window.addEventListener('hashchange', () => {
-        console.log('Cambió la URL')
+        //console.log('Cambió la URL')
 
         let id = location.hash.slice(1)
         marcarLink(id)
-
-        let archivo = getNombreArchivo(id)
-        let xhr = ajax(archivo)
-        xhr.addEventListener('load', () => {
-            if (xhr.status == 200) {
-                let plantilla = xhr.response
-                main.innerHTML = plantilla
-            }
-        })
+        cargarPlantilla(id)
     })
 }
 
+cargarPlantillas()
+
+}
+
+start()
 

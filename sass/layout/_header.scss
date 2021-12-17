@@ -1,6 +1,10 @@
 /*********************************
             HEADER
 *********************************/
+.active {
+    font-weight: bold;
+    color: red;
+}
 
 .main-header {
     display: flex;
@@ -77,6 +81,11 @@
         background-repeat: no-repeat;
         background-size: 0% 2px;
         transition: background-size .3s;
+
+        .active {
+            font-weight: bold;
+            color: red;
+        }
     }
 
     &__nav-link:hover {
