@@ -1,52 +1,60 @@
+<section class="header-background">
+    <h1>Alta</h1>
+</section>
 
-    <section class="header-background">
-        <h1>Alta</h1>
-    </section>
+<main>
 
-    <main>
-        <form class="form-alta">
-            <h2 class="form-alta_title">Alta de producto</h2>
-    
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre">
-            <div></div>
-    
-            <label for="precio">Precio</label>
-            <input type="text" id="precio">
-            <div></div>
-    
-            <label for="stock">Stock</label>
-            <input type="text" id="stock">
-            <div></div>
-    
-            <label for="marca">Marca</label>
-            <input type="text" id="marca">
-            <div></div>
-    
-            <label for="categoria">Categoria</label>
-            <input type="text" name="" id="categoria">
-            <div></div>
-    
-            <label for="detalles">Detalles</label>
-            <input type="text" id="detalles">
-            <div></div>
-    
-            <label for="foto">Fotos</label>
-            <input type="text" id="foto">
-            <div></div>
-    
-            <label for="envio">envio</label>
-            <input type="checkbox" name="" id="envio">
-    
-            <button class="submit"><img src="img/logo/send.png" alt=""></button>
+    <div class="main-container">
+        <form class="main-container__form">
+            <h2 class="main-container__form-header">Alta de producto</h2>
+
+            <div class="flex-container">
+                <div class="flex-container__label-field">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" autocomplete="off">
+                    <div class="regexp"></div>
+                </div>
+                <div class="flex-container__label-field">
+                    <label for="precio">Precio</label>
+                    <input type="text" id="precio">
+                    <div class="regexp"></div>
+                </div>
+                <div class="flex-container__label-field">
+                    <label for="stock">Stock</label>
+                    <input type="text" id="stock">
+                    <div class="regexp"></div>
+                </div>
+                <div class="flex-container__label-field">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marca">
+                    <div class="regexp"></div>
+                </div>
+                <div class="flex-container__label-field">
+                    <label for="categoria">Categoria</label>
+                    <input type="text" name="" id="categoria">
+                    <div class="regexp"></div>
+                </div>
+
+                <div class="flex-container__label-field">
+                    <label for="detalles">Detalles</label>
+                    <input type="text" id="detalles">
+                    <div class="regexp"></div>
+                </div>
+
+                <div class="flex-container__photo-field">
+                    <label for="foto">Fotos</label>
+                    <input type="text" id="foto">
+                    <div class="regexp"></div>
+                </div>
+                <div class="flex-container__ship-field">
+                    <label for="envio">envio</label>
+                    <input type="checkbox" name="" id="envio">
+                </div>
+                <input type="submit" class="flex-container__submit-button" value="Enviar">
+            </div>
         </form>
-    </main>
+    </div>
+</main>
 
-    <hr>
-    <h1>Listado de productos</h1>
-    <hr>
-
-    <div id="listado-productos"></div>
-
-
-    
+<div class="arrow"><img src="/img/logo/flecha-abajo.png" alt=""><h1>Listado de productos</h1><img src="/img/logo/flecha-abajo.png" alt=""></div>
+<div id="listado-productos"></div>

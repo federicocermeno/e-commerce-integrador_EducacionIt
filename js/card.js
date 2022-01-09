@@ -25,10 +25,11 @@ function initInicio() {
         renderCards()
 
 
-        function Card(image,heading,price){
+        function Card(image,heading,price,details){
             this.image = image
             this.heading = heading
             this.price = price
+            this.details = details
 
 
             this.appendTo= (destinationElement)=>{ 
@@ -47,14 +48,14 @@ function initInicio() {
         
     
     const cards = [ 
-        new Card("samsung/galaxy-1.3.jpg","Galaxy Watch 1.3' ","$67.500"), 
-        new Card("samsung/galaxy-4.jpg ","Galaxy Watch 4","$36.999"), 
-        new Card("samsung/galaxy-pink.jpg ","Galaxy Watch 4 Pink","$38.999"), 
-        new Card("samsung/galaxy-3.jpg","Galaxy Watch 3","$42.499"), 
-        new Card("samsung/galaxy-active.jpg","Galaxy Watch Active 2","$35.990"), 
-        new Card("samsung/galaxy-active2.jpg","Galaxy Watch Active","$32.999"), 
-        new Card("apple/series-6.jpg","Apple Watch Series 6","$69.999"), 
-        new Card("apple/series-6-red.jpg","Apple Watch Series 6 RED","$74.999"), 
+        new Card("samsung/galaxy-1.3.jpg","Galaxy Watch 1.3' ","$67.500", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("samsung/galaxy-4.jpg ","Galaxy Watch 4","$36.999", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("samsung/galaxy-pink.jpg ","Galaxy Watch 4 Pink","$38.999", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("samsung/galaxy-3.jpg","Galaxy Watch 3","$42.499", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("samsung/galaxy-active.jpg","Galaxy Watch Active 2","$35.990", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("samsung/galaxy-active2.jpg","Galaxy Watch Active","$32.999", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("apple/series-6.jpg","Apple Watch Series 6","$69.999", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
+        new Card("apple/series-6-red.jpg","Apple Watch Series 6 RED","$74.999", " Batería de hasta 7 días de duración / Reproductor MP3 / Operación a través del bisel giratorio"), 
         new Card("apple/watch-se.jpg","Apple Watch SE","$54.099"), 
         new Card("apple/series-5.jpg","Apple Watch Series 5", "$55.999"), 
         new Card("apple/watch-nike.jpg","Apple Watch Nike","$83.999"), 

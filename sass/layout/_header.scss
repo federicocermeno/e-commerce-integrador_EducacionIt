@@ -135,6 +135,8 @@
         background-color: transparent;
         width: 100%;
         font-size: 20px;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
     }
 
     &__form-submit {
@@ -146,6 +148,8 @@
         width: 10%;
         cursor: pointer;
         border-left: transparent;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
 
         img {
             height: 20px;

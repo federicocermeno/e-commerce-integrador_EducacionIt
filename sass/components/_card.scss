@@ -30,13 +30,27 @@ header {
 
     &:hover,
     &:focus {
-        -moz-transform: scale(1.03);
+        /* -moz-transform: scale(1.03);
         -webkit-transform: scale(1.03);
         transform: scale(1.03);
-        -moz-transform-origin: bottom;
-        -webkit-transform-origin: bottom;
-        transform-origin: bottom;
+        -moz-transform-origin: bottom; */
+        /* -webkit-transform-origin: bottom;
+        transform-origin: bottom; */
         box-shadow: 0px 7px 8px 4px rgba(0, 0, 0, .05), 0 3px 3px rgba(0, 0, 0, .01);
+
+        
+        .card__description-details {
+            opacity: 0;
+            transition: all .4s;
+        }
+
+        .card__description-chart {
+            opacity: 1;
+            transition: all .4s;
+            position: relative;
+            bottom: 42px;
+            
+        }
     }
 
     &__image {
@@ -49,12 +63,6 @@ header {
         transition: all .2s;
     }
 
-    &:hover &__image {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
-        clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
-        transform: scale(1.1);
-        transition-delay: 0s;
-    }
 
     &__content {
         position: absolute;
@@ -66,7 +74,7 @@ header {
         transition: all .2s;
         list-style-type: none;
         text-align: center;
-        background-color: #F6E4F6;
+        background-color: #fff;
 
     }
 
@@ -79,23 +87,24 @@ header {
         }
 
         &-chart {
-            width: 100%;
-            display: flex;
-            justify-content: center;
             font-size: 18px;
-            align-items: center;
             padding: 0.3em;
-            background-color: #A4A9F6;
-            border: 0;
-            
+            background-color: #000;
+            color: #fff;
+            opacity: 0; // hacer desaparecer el boton de agregar al carrito
+            border-radius: 5px;
+        }
+
+        &-details {
+            opacity: 1;
         }
     }
 
 
-    &:hover &__content {
+    /* &:hover &__content {
         padding-top: 4em;
     }
-
+ */
 
     @media (min-width: 1024px) {
         & {

@@ -37,8 +37,7 @@ function initJS(id) {
     }
     else if(id == 'contacto') {
         initContacto()
-    }
-
+    } 
 }
 
 function cargarPlantilla(id) {

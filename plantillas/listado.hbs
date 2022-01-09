@@ -9,6 +9,7 @@
             <th>detalles</th>
             <th>foto</th>
             <th>envio</th>
+            <th>accion</th>
         </tr>
 
     {{#each productos}}
@@ -26,7 +27,11 @@
                 <td>Si</td>
             {{else}}
                 <td>No</td>
-            {{/if}}    
+            {{/if}}
+            <td>
+                <button onclick="actualizarProducto({{id}})">Actualizar</button>
+                <button onclick="borrarProducto({{id}})">Borrar</button>
+            </td>    
         </tr>
     {{/each}}
 </table>

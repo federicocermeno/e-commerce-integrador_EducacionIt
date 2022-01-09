@@ -1,17 +1,12 @@
-function initAlta() { 
-    console.warn('InicioAlta')
-let productos = [ ]
 
-const inputs = document.querySelectorAll('main input')
-const form = document.querySelector('main form')
-const button = document.querySelector('main button')
-
-button.disabled = true
-let camposValidos = [false,false,false,false,false,false,false,]
-
+///// Declaraciones de variables y funciones globales
+let inputs
+let form 
+let button 
+let camposValidos
 
 const setCustomValidityJS = (mensaje, index) => {
-    let divs = document.querySelectorAll('form div')
+    let divs = document.querySelectorAll('.regexp')
     divs[index].innerHTML = mensaje
     divs[index].style.display = mensaje ? 'block' : 'none '
 
@@ -50,101 +45,13 @@ function validar(valor, validador, index) {
 
 const regExpValidar = [
     /^.+$/, //expresion regular de nombre
-    /^.+$/, //expresion regular de precio
+    /^[0-9]+$/, //expresion regular de precio
     /^[0-9]+$/, //expresion regular de stock
     /^.+$/, //expresion regular de marca
     /^.+$/, //expresion regular de categoria
     /^.+$/, //expresion regular de detalles
     /^.+$/, //expresion regular de foto
 ]
-
-
-inputs.forEach((input,index) => {
-
-    if(input.type != 'checkbox') { 
-        input.addEventListener('input', () => { 
-            validar(input.value, regExpValidar[index], index)
-        })
-    }   
-})
-
-form.addEventListener('submit', e => {
-    e.preventDefault()
-
-    let producto = {
-        nombre: inputs[0].value,
-        precio: inputs[1].value,
-        stock: inputs[2].value,
-        marca: inputs[3].value,
-        categoria: inputs[4].value,
-        detalles: inputs[5].value,
-        foto: inputs[6].value,
-        envio: inputs[7].checked,
-
-    }
-
-    // borrar todos los inputs
-    inputs.forEach(input => input.value = '')
-
-    productos.push(producto)
-
-
-    //console.log(productos)
-    renderProds()
-
-    button.disabled = true
-    camposValidos = [false,false,false,false,false,false,false,]
-
-    /* renderProds() */
-})
-
-/* function renderProdsObjetos() {
-    let html = ''
-    for(let i=0; i<productos.length; i++) {
-        html += `<p>${JSON.stringify(productos[i])}</p>`
-    }
-    document.getElementById('listado-productos').innerHTML = html
-} */
-
-/* 
-function renderProdsTemplateString() {
-    let html = ''
-
-    html += '<table>'
-    html += `
-        <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Marca</th>
-            <th>Categoria</th>
-            <th>Detalles</th>
-            <th>Foto</th>
-            <th>Envio</th>
-        </tr>
-    `
-
-    for(let i=0; i<productos.length; i++) {
-        let producto = productos[i]
-
-        html += `
-        <tr>
-            <td>${producto.nombre}</td>
-            <td>${producto.precio}</td>
-            <td>${producto.stock}</td>
-            <td>${producto.marca}</td>
-            <td>${producto.categoria}</td>
-            <td>${producto.detalles}</td>
-            <td>${producto.foto}</td>
-            <td>${producto.envio}</td>
-        </tr>
-        `
-    }
-    html += '</table>'
-    document.getElementById('listado-productos').innerHTML = html
-
-} */
-
 
 function renderProds() {
 
@@ -166,5 +73,64 @@ function renderProds() {
     })
     xhr.send()
 }
-    renderProds()
+
+function leerProductoIngresado() {
+    return {
+        nombre: inputs[0].value,
+        precio: inputs[1].value,
+        stock: inputs[2].value,
+        marca: inputs[3].value,
+        categoria: inputs[4].value,
+        detalles: inputs[5].value,
+        foto: inputs[6].value,
+        envio: inputs[7].checked,
+    }
+}
+
+function limpiarFormulario() {
+    // borrar todos los inputs
+    inputs.forEach(input => {
+        if(input.type != 'checkbox') input.value = ''
+        else if(input.type == 'checkbox') input.checked = true
+    })
+
+
+    button.disabled = true
+    camposValidos = [false,false,false,false,false,false,false,]
+
+
+}
+
+////// Inicializaciones para el funcionamiento del modulo
+
+async function initAlta() { 
+    console.warn('InicioAlta')
+
+    inputs = document.querySelectorAll('main input')
+    form = document.querySelector('main form')
+    button = document.querySelector('.flex-container__submit-button')
+
+    button.disabled = true
+    camposValidos = [false,false,false,false,false,false,false,]
+
+
+
+
+
+inputs.forEach((input,index) => {
+
+    if(input.type != 'checkbox') { 
+        input.addEventListener('input', () => { 
+            validar(input.value, regExpValidar[index], index)
+        })
+    }   
+})
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    guardarProducto()
+})
+
+    obtenerProductos()
 }
