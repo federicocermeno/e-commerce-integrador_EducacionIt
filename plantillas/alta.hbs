@@ -29,10 +29,16 @@
                 <td>No</td>
             {{/if}}
             <td>
-                <button onclick="actualizarProducto({{id}})">Actualizar</button>
-                <button onclick="borrarProducto({{id}})">Borrar</button>
-            </td>    
-        </tr>
-    {{/each}}
-</table>
+                    {{#if ../validos}}
+                        <button onclick="productoController.actualizarProducto({{id}})" class="botonAlta">Actualizar</button>
+                    {{else}}
+                        <button disabled onclick="productoController.actualizarProducto({{id}})" class="botonAlta">Actualizar</button>
+                    {{/if}}
+                    <button onclick="productoController.borrarProducto({{id}})" class="botonAlta">Borrar</button>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+{{else}}
+    <h2>No se encontraron productos</h2>
 {{/if}}
