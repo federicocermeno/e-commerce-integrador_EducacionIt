@@ -125,6 +125,7 @@
         border: 0;
         background-color: #f1f2f3;
         cursor: pointer;
+        border-radius: 5px;
     }
 
 }
@@ -137,6 +138,7 @@
     -ms-flex-pack: distribute;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 
     &__image img {
         width: 100px;
@@ -155,5 +157,36 @@
   }
 
 
+  @media (max-width: 768px) {
+    .section-carrito button.btn__borrarCarrito {
+      margin: 40% 13px;
+      width: 91px;
+    }
+}
+
+@media (max-width: 1024px) {
+  .section-carrito button.btn__borrarCarrito {
+    /* margin: 40% 13px; */
+    width: 91px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section-carrito {
+    left: 64%;
+  }
+
+  .section-carrito button.btn__borrarCarrito {
+    /* margin: 40% 13px; */
+    width: 91px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .section-carrito button.btn__borrarCarrito, .section-carrito button.btn__enviarCarrito {
+    margin: 40% 13px;
+    width: 91px;
+  }
+}
 
 
