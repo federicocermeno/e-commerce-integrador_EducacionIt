@@ -45,8 +45,16 @@
 }
 
 .section-cards__header {
+
+    h1 {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 40px;
+    }
     p {
         margin: 20px 0;
+        font-size: large;
     }
 }
 
@@ -178,11 +186,6 @@
 
 }
 
-
-
-
-
-
 /*********************************
             MENU TOGGLE
 *********************************/
@@ -257,11 +260,12 @@
             display: inline-block;
             margin: 0;
             padding: 0;
-            width: 10%;
-            vertical-align: middle;
-
+            
             .fa-2x {
                 font-size: 20px;
+            }
+            p {
+                display: none;
             }
         }
 
@@ -275,7 +279,7 @@
         margin: 0;
         margin-right: 24px;
         padding: 0;
-        width: 70%;
+        width: 59%;
         }
         
         &__form-search {
@@ -287,7 +291,10 @@
 
         &__form-submit {
             float: right;
-            padding: 1px;
+            padding: 2.5px;
+            position: relative;
+            top: 0px;
+            left: -5px;
         }
 
         .menu-toggle {
@@ -300,6 +307,7 @@
             &__label {
                 position: relative;
                 background-color: transparent;
+                margin-left: 42px;
             }
 
             &__pan-arriba,
@@ -323,7 +331,5 @@
                 bottom: 0;
             }
         }
-    
     }
-
 }

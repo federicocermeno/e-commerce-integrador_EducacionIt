@@ -157,36 +157,54 @@
   }
 
 
-  @media (max-width: 768px) {
-    .section-carrito button.btn__borrarCarrito {
-      margin: 40% 13px;
-      width: 91px;
+  @media screen and (max-width: 480px) {
+    .section-carrito {
+      bottom: 290px;
+      left: 36%;
+      
+      
     }
-}
-
-@media (max-width: 1024px) {
-  .section-carrito button.btn__borrarCarrito {
-    /* margin: 40% 13px; */
-    width: 91px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .section-carrito {
-    left: 64%;
+    .section-carrito button.btn__borrarCarrito,  .section-carrito button.btn__enviarCarrito {
+      width: 81px;
+    }
+    
   }
 
-  .section-carrito button.btn__borrarCarrito {
-    /* margin: 40% 13px; */
-    width: 91px;
+  @media screen and (min-width:768px) {
+    .section-carrito {
+      bottom: 290px;
+      left: 59%;
+    }
+    .section-carrito button.btn__borrarCarrito,  .section-carrito button.btn__enviarCarrito {
+      width: 118px;
+    }
   }
-}
 
-@media (min-width: 1201px) {
-  .section-carrito button.btn__borrarCarrito, .section-carrito button.btn__enviarCarrito {
-    margin: 40% 13px;
-    width: 91px;
+  @media screen and (min-width: 1024px ) {
+    .section-carrito {
+      bottom: 238px;
+      left: 66%;
+    }
+    .section-carrito button.btn__borrarCarrito,  .section-carrito button.btn__enviarCarrito {
+      
+    width: 139px;
+
+
+    }
+
   }
-}
 
+  @media screen and (min-width: 1200px ) {
+    .section-carrito {
+      bottom: 238px;
+      left: 69%;
+    }
+  }
+
+  @media screen and (min-width: 1201px ) {
+    .section-carrito {
+      bottom: 293px;
+      left: 79%;
+    }
+  }
 

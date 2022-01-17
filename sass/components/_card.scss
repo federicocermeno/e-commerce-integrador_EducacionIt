@@ -27,7 +27,6 @@ header {
     -webkit-transition: all .2s;
     transition: all .2s;
     
-
     &:hover,
     &:focus {
         
@@ -71,7 +70,7 @@ header {
         position: absolute;
         bottom: 0;
         padding: 2em 0;
-        height: 230px;
+        height: 265px;
         width: 100%;
         z-index: -1;
         transition: all .2s;
@@ -104,16 +103,7 @@ header {
         }
     }
 
-
-    /* &:hover &__content {
-        padding-top: 4em;
-    }
- */
-
     @media (min-width: 1024px) {
-
-
-        
         & {
             min-width: 230px;
         }
@@ -122,6 +112,7 @@ header {
     @media (min-width: 1280px) {
         & {
             min-width: 240px;
+            width: 259px;
         }
     }
 
@@ -133,6 +124,7 @@ header {
 
         &__article {
             display: flex;
+            background: none;
         }
 
         &__image {
@@ -145,4 +137,14 @@ header {
             padding-left: 45%;
         }
     }
+}
+
+.mensajeCarrito {
+    display: flex;
+    position: absolute;
+    top: 238px;
+    left: 9px; 
+    margin: 0;
+    background-color: #7FFF00;
+    border-radius: 5px;
 }

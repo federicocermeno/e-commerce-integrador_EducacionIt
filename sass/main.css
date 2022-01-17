@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 *,
 *::after,
 *::before {
@@ -64,10 +65,6 @@ header p {
   border-top-right-radius: 5px;
   -webkit-transition: all .2s;
   transition: all .2s;
-  /* &:hover &__content {
-        padding-top: 4em;
-    }
- */
 }
 
 .card:hover, .card:focus {
@@ -112,7 +109,7 @@ header p {
   position: absolute;
   bottom: 0;
   padding: 2em 0;
-  height: 230px;
+  height: 265px;
   width: 100%;
   z-index: -1;
   -webkit-transition: all .2s;
@@ -150,6 +147,7 @@ header p {
 @media (min-width: 1280px) {
   .card {
     min-width: 240px;
+    width: 259px;
   }
 }
 
@@ -162,6 +160,7 @@ header p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background: none;
   }
   .card__image {
     width: 40%;
@@ -174,10 +173,22 @@ header p {
   }
 }
 
+.mensajeCarrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 238px;
+  left: 9px;
+  margin: 0;
+  background-color: #7FFF00;
+  border-radius: 5px;
+}
+
 .slider {
-  border: 1px solid black;
+  border: 0 solid black;
   border-radius: 4px;
-  width: 50%;
+  width: 56%;
   overflow: hidden;
   margin: 30px auto;
 }
@@ -470,34 +481,47 @@ header p {
   font-weight: 100;
 }
 
-@media (max-width: 768px) {
-  .section-carrito button.btn__borrarCarrito {
-    margin: 40% 13px;
-    width: 91px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .section-carrito button.btn__borrarCarrito {
-    /* margin: 40% 13px; */
-    width: 91px;
-  }
-}
-
-@media (max-width: 1200px) {
+@media screen and (max-width: 480px) {
   .section-carrito {
-    left: 64%;
+    bottom: 290px;
+    left: 36%;
   }
-  .section-carrito button.btn__borrarCarrito {
-    /* margin: 40% 13px; */
-    width: 91px;
+  .section-carrito button.btn__borrarCarrito, .section-carrito button.btn__enviarCarrito {
+    width: 81px;
   }
 }
 
-@media (min-width: 1201px) {
+@media screen and (min-width: 768px) {
+  .section-carrito {
+    bottom: 290px;
+    left: 59%;
+  }
   .section-carrito button.btn__borrarCarrito, .section-carrito button.btn__enviarCarrito {
-    margin: 40% 13px;
-    width: 91px;
+    width: 118px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section-carrito {
+    bottom: 238px;
+    left: 66%;
+  }
+  .section-carrito button.btn__borrarCarrito, .section-carrito button.btn__enviarCarrito {
+    width: 139px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-carrito {
+    bottom: 238px;
+    left: 69%;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .section-carrito {
+    bottom: 293px;
+    left: 79%;
   }
 }
 
@@ -556,8 +580,16 @@ header p {
   transition: 0.4s;
 }
 
+.section-cards__header h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+}
+
 .section-cards__header p {
   margin: 20px 0;
+  font-size: large;
 }
 
 /*********************************
@@ -772,11 +804,12 @@ header p {
     display: inline-block;
     margin: 0;
     padding: 0;
-    width: 10%;
-    vertical-align: middle;
   }
   .search-bar__carrito-container .fa-2x {
     font-size: 20px;
+  }
+  .search-bar__carrito-container p {
+    display: none;
   }
   .search-bar__logo-container {
     width: 100%;
@@ -787,7 +820,7 @@ header p {
     margin: 0;
     margin-right: 24px;
     padding: 0;
-    width: 70%;
+    width: 59%;
   }
   .search-bar__form-search {
     font-size: small;
@@ -797,7 +830,10 @@ header p {
   }
   .search-bar__form-submit {
     float: right;
-    padding: 1px;
+    padding: 2.5px;
+    position: relative;
+    top: 0px;
+    left: -5px;
   }
   .search-bar .menu-toggle {
     display: inline-block;
@@ -809,6 +845,7 @@ header p {
   .search-bar .menu-toggle__label {
     position: relative;
     background-color: transparent;
+    margin-left: 42px;
   }
   .search-bar .menu-toggle__pan-arriba, .search-bar .menu-toggle__medallon, .search-bar .menu-toggle__pan-abajo {
     left: 0;
@@ -899,12 +936,8 @@ footer {
 @media (max-width: 768px) {
   .cards-container {
     margin: 0;
+    padding: 1em 1em;
   }
-}
-
-body {
-  /*     background-color: rgba(54, 66, 236, 0.452);
- */
 }
 
 .alta_title {
