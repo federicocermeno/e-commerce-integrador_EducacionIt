@@ -1,0 +1,23 @@
+.header-container {
+    width: 100%;
+    height: 62vh;
+    object-fit: cover;
+
+    &__video {
+        
+        object-fit: cover;
+        height: 58vh;
+        width: 100%;
+        filter: brightness(50%);
+    }
+
+    h1 {
+        position: relative;
+        color: #fff;
+        font-size: 7vh;
+        bottom: 50%;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+    }
+}
