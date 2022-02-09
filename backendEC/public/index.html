@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONNECTICUS</title>
+    <title>Connecticus Store</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="sass/main.css">
     <link rel="shortcut icon" href="img/logo/favicon.png">
     <script src="https://kit.fontawesome.com/f1a7eb1709.js" crossorigin="anonymous"></script>
@@ -68,29 +70,45 @@
     <div class="section-carrito"></div>
     <!-- --------------------------------------- -->
 
-    <main id="sectioncards">
-        
-    </main>
+     <!-- --------- VISTA DE PAGO------------------->
+     <div class="section-pago"></div>
+     <!-- ------------------------------------------>
+
+    <main id="sectioncards"></main>
 
 
     <footer>
         <div class="footer__content">
             <div class="footer__content-logo">
-                <img src="img/logo/header-logo.png" alt="">
+                <a href="#">
+                    <img src="img/logo/header-logo.png" alt="">
+                </a>
+                <h3>Ubicacion</h3>
+                <h4>Rosario, Santa Fe, Argentina</h4>
+            </div>
+
+            <div class="footer__content-payment">
+                <h3>Seguinos en las redes</h3>
+                <div class="social-media">
+
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                </div>
             </div>
             <div class="footer__content-payment">
                 <h3>Formas de pago</h3>
-                <div class="footer__content-payment-method">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                    <i class="fab fa-btc"></i>
-                </div>
+                
+                    <i class="fab fa-cc-visa"><p>Visa</p></i>
+                    <i class="fab fa-cc-mastercard"><p>Mastercard</p></i>
+                    <i class="fab fa-cc-paypal"><p>Paypal</p></i>
+        
             </div>
         </div>
     </footer>
 <!-- Código de librerías -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+<script src="https://sdk.mercadopago.com/js/v2"></script> <!-- SDK MercadoPago.js V2 -->
 
 <!-- clientes http -->
 <script src="js/clientes/http.client.js"></script>
@@ -113,10 +131,13 @@
 <script src="js/menu/contacto.js"></script>
 <script src="js/menu/inicio.js"></script>
 <script src="js/menu/carrito.js"></script>
+<script src="js/menu/pago.js"></script>
 
 <!-- Código de arranque -->
 <script src="js/main.js"></script>
 
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 

@@ -20,12 +20,15 @@
         <h4>${{precio}}</h4>
         <h4>Cantidad: {{cantidad}}</h4>
 
-        <button class="btn__borrarCarrito" onclick="carritoController.borrarProductoCarrito('{{_id}}')">X</button>
+        <button class="btn__" onclick="carritoController.borrarProductoCarrito('{{id}}')">Borrar producto</button>
     </div>
 </article>
         {{/each}}
     </table>
+    <div>
     <button class="btn__enviarCarrito" onclick="carritoController.enviarCarrito()">Finalizar Compra</button>
+
+    </div>
 {{else}}
     <h2>El carrito está vacío</h2>
 {{/if}}

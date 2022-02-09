@@ -5,13 +5,15 @@ async function renderPlantillaListado(listado) {
     
     let html = template({ listado })
     document.getElementsByClassName('cards-container')[0].innerHTML = html  
+
+    mensajeCarrito()
 }
 
 function agregarCarrito(e,id,ref) {
     e.preventDefault()
-    
-    let producto = productoController.productos.find( producto => producto._id == id )
+    let producto = productoController.productos.find( producto => producto.id == id )
     carritoController.agregarAlCarrito(producto)
+    
     mensajeCarrito()
 }
 
@@ -22,16 +24,17 @@ async function initInicio() {
     await renderPlantillaListado(productos)
 
     document.querySelector('.section-cards__header p').innerHTML = `Se encontraron ${productos.length} productos`
+
+    AOS.init()
 }
 
+/* --------Mensaje "Agregado al carrito"------- */
 function mensajeCarrito() {
     mensaje = document.querySelectorAll('.mensajeCarrito')
     click = document.querySelectorAll('.card__description-chart')
   
-
     click.forEach((todosLosDivs, index) => {
       todosLosDivs.addEventListener('click', () => {
-            console.log('agregando...')
              mensaje[index].style.display = 'flex'
             
              setTimeout(() => {
@@ -39,9 +42,10 @@ function mensajeCarrito() {
              }, 2000);
       })
     })
-    
 }
+/* -------------------------------------------- */
 
+/* -------------- Nav Bar Sticky -------------- */
 var menu = document.getElementById('searchbar')
 var body = document.getElementById('sectioncards')
 var alturaMenu = menu.offsetTop
@@ -56,3 +60,4 @@ window.addEventListener('scroll', () => {
         body.classList.remove('section-fixed')
     }
 })
+/* -------------------------------------------- */

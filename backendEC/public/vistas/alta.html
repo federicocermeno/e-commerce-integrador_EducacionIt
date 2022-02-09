@@ -1,9 +1,9 @@
-<section class="header-background">
-    <h1>Alta</h1>
-</section>
 
-<main>
-
+<main class="mainn">
+    <section class="header-background">
+        <h1>Alta</h1>
+    </section>
+    
     <div class="main-container">
         <form class="main-container__form">
             <h2 class="main-container__form-header">Alta de producto</h2>
@@ -11,44 +11,59 @@
             <div class="flex-container">
                 <div class="flex-container__label-field">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" autocomplete="off">
+                    <input type="text" id="nombre" autocomplete="off" class="data-validation">
                     <div class="regexp"></div>
                 </div>
                 <div class="flex-container__label-field">
                     <label for="precio">Precio</label>
-                    <input type="text" id="precio">
+                    <input type="text" id="precio" class="data-validation">
                     <div class="regexp"></div>
                 </div>
                 <div class="flex-container__label-field">
                     <label for="stock">Stock</label>
-                    <input type="text" id="stock">
+                    <input type="text" id="stock" class="data-validation">
                     <div class="regexp"></div>
                 </div>
                 <div class="flex-container__label-field">
                     <label for="marca">Marca</label>
-                    <input type="text" id="marca">
+                    <input type="text" id="marca" class="data-validation">
                     <div class="regexp"></div>
                 </div>
                 <div class="flex-container__label-field">
                     <label for="categoria">Categoria</label>
-                    <input type="text" name="" id="categoria">
+                    <input type="text" name="" id="categoria" class="data-validation">
                     <div class="regexp"></div>
                 </div>
 
                 <div class="flex-container__label-field">
                     <label for="detalles">Detalles</label>
-                    <input type="text" id="detalles">
+                    <input type="text" id="detalles" class="data-validation">
                     <div class="regexp"></div>
                 </div>
 
-                <div class="flex-container__photo-field">
+                <!-- <div class="flex-container__photo-field">
                     <label for="foto">Fotos</label>
                     <input type="text" id="foto">
                     <div class="regexp"></div>
+                </div> -->
+
+                <div id="drop-area">
+                    <p><b>Arrastre la imagen</b> dentro de la zona punteada o <b>seleccione archivo</b></p>
+                   <!--  <br> -->
+
+                    <input type="file" id="foto" accept="image/*" onchange="formularioAlta.handleFiles(this.files)">
+                    <label for="foto" class="botonfoto">Seleccione archivo</label>
+                    <!-- <br><br> -->
+                    
+                    <progress id="progress-bar" max="100" value="0"></progress>
+                    <div id="gallery"><img width="100" src="" alt=""></div>
+                    <br>
                 </div>
+
+
                 <div class="flex-container__ship-field">
-                    <label for="envio">envio</label>
-                    <input type="checkbox" name="" id="envio">
+                    <label for="envio" >Envio</label>
+                    <input type="checkbox" name="" id="envio" class="data-validation">
                 </div>
                 <input type="submit" class="flex-container__submit-button" value="Enviar">
             </div>

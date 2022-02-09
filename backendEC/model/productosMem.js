@@ -1,3 +1,5 @@
+import DB_Mongo from "./DB_Mongo.js"
+
 class ProductoModelMem {
 
     productos = []
@@ -27,7 +29,7 @@ class ProductoModelMem {
         let index = this.productos.findIndex(producto => producto.id == id)
         this.productos.splice(index,1,producto)
 
-        return producto
+        return  producto
     }
 
     /* CRUD -> D : Delete -> http method DELETE */

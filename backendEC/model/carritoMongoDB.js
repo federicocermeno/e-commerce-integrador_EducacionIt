@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
-import ProductoModelMongoDB from './productosMongoDB.js'
+import DB_Mongo from './DB_Mongo.js'
+
 
 /* Esquema del documento producto */
 const carritoSchema = mongoose.Schema({
@@ -14,7 +15,7 @@ class CarritoModelMongoDB {
 
     /* CRUD CREATE HTTP POST */
     async createCarrito(carrito) {
-        if(!ProductoModelMongoDB.conexionOk) return {}
+        if(!DB_Mongo.conexionOk) return {}
 
         try {
             const carritoSave = new CarritoModel({carrito: carrito})

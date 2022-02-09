@@ -1,8 +1,13 @@
 [
 	{
-		"nombre": "TV 9999",
-		"descripcion": "Smart TV 9999 Pulgadas",
-		"precio": 99999,
-		"id": 1
+		"nombre": "hola",
+		"precio": "24",
+		"stock": "24",
+		"marca": "hooo",
+		"categoria": "oooo",
+		"detalles": "ooo",
+		"foto": "ooo",
+		"envio": false,
+		"id": "1"
 	}
 ]

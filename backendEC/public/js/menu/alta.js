@@ -4,19 +4,27 @@ class FormularioAlta {
     inputs = null
     form = null
     button = null
-    camposValidos = [false,false,false,false,false,false,false]
+    camposValidos = [false,false,false,false,false,false]
     regExpValidar = [
         /^.+$/, //expresion regular de nombre
-        /^[0-9]+$/, //expresion regular de precio
+        /^[0-9]+([.])?([0-9]+)?$/, //expresion regular de precio
         /^[0-9]+$/, //expresion regular de stock
         /^.+$/, //expresion regular de marca
         /^.+$/, //expresion regular de categoria
-        /^.+$/, //expresion regular de detalles
-        /^.+$/, //expresion regular de foto
+        /^.+$/, //expresion regular de detalles  
     ]
+
+    /* ---Drag and Drop--- */
+
+
+    imagenSubida = ''
+    dropArea = null
+    progressBar = null
+
+    /* ------------------- */
     
     constructor(renderTablaAlta, guardarProducto) {
-        this.inputs = document.querySelectorAll('main input')
+        this.inputs = document.querySelectorAll('main input.data-validation')
         this.form = document.querySelector('main form')
         this.button = document.querySelector('.flex-container__submit-button')
 
@@ -39,7 +47,41 @@ class FormularioAlta {
 
             if(guardarProducto) guardarProducto(producto)
         })
+
+        /* ---Drag and Drop---(dentro de constructor para inicializar vars.*/
+        this.dropArea = document.getElementById('drop-area')
+        this.progressBar = document.getElementById('progress-bar')
+    
+        //Cancelar el evento automatico de DyD en todo el doc
+        ;['dragenter','dragover','dragleave','drop'].forEach(eventName => {
+            this.dropArea.addEventListener(eventName, e=> e.preventDefault())
+            document.body.addEventListener(eventName, e=> e.preventDefault())
+        })    
+
+        //Remarcar drop area al arrastrar imagen dentro
+        ;['dragenter','dragover'].forEach(eventName => {
+            this.dropArea.addEventListener(eventName, () => {
+                this.dropArea.classList.add('highlight')
+            })
+        })  
+
+        //Remarcar drop area al abandonar zona de drop
+        ;['dragleave','drop'].forEach(eventName => {
+            this.dropArea.addEventListener(eventName, () => {
+                this.dropArea.classList.remove('highlight')
+            })
+        })    
+
+        this.dropArea.addEventListener('drop', e => { //arrow para usar el this de handleFiles
+            var dt = e.dataTransfer
+            var files = dt.files
+
+            this.handleFiles(files)
+        })
+
+        /* ------------------- */
     }
+
 
     setCustomValidityJS = (mensaje, index) => {
         let divs = document.querySelectorAll('.regexp')
@@ -54,9 +96,8 @@ class FormularioAlta {
             this.camposValidos[2] && 
             this.camposValidos[3] && 
             this.camposValidos[4] && 
-            this.camposValidos[5] && 
-            this.camposValidos[6]
-        
+            this.camposValidos[5] 
+
         return !valido
     }
     
@@ -85,8 +126,8 @@ class FormularioAlta {
             marca: this.inputs[3].value,
             categoria: this.inputs[4].value,
             detalles: this.inputs[5].value,
-            foto: this.inputs[6].value,
-            envio: this.inputs[7].checked,
+            foto: this.imagenSubida? `/uploads/${this.imagenSubida}` : '',
+            envio: this.inputs[6].checked,
         }
     }
     
@@ -98,8 +139,66 @@ class FormularioAlta {
         })
         
         this.button.disabled = true
-        this.camposValidos = [false,false,false,false,false,false,false]
+        this.camposValidos = [false,false,false,false,false,false]
+
+        let img = document.querySelector('#gallery img')
+        img.src = ''
+
+        this.initializeProgress()
+        this.imagenSubida = ''
+
+
     }
+
+    /*------------ DRAG AND DROP ------------*/
+    initializeProgress() {  //inicializar barra de progreso
+        this.progressBar.value = 0
+    }
+
+    updateProgress(porcentaje) { // ir actualizando el progreso de la barra
+        this.progressBar.value = porcentaje
+    }
+
+    previewFile(file) {  //previsualizar imagen de producto
+        let reader = new FileReader() //leer cualquier archivo dentro del droparea o file manager
+        reader.readAsDataURL(file) //proceso de leer archivo como URL
+        reader.onloadend = function() { //separar la imagen
+            let img = document.querySelector('#gallery img')
+            img.src = reader.result
+        }
+    }
+
+    handleFiles = files => {
+        let file = files[0]
+        this.initializeProgress() //inicializa barra progreso
+        this.uploadFile(file) // se toma el upload
+        this.previewFile(file) // se muestra la imagen
+    }
+
+    uploadFile = file => {  // se realiza así porque se utiliza el this, asi no se pierde
+        var url = '/upload'   //ruta en la cual queremos subir
+
+        var xhr = new XMLHttpRequest()
+        var formdata = new FormData()    // contenedor de informacion clave-valor
+
+        xhr.open('POST', url)
+
+        xhr.upload.addEventListener('progress', e => { // upload porque es un progreso de subida
+            let porcentaje = (((e.loaded * 100) / e.total) || 100)
+            this.updateProgress(porcentaje)
+        })
+
+        xhr.addEventListener('load', () => {
+            if(xhr.status == 200) {
+                this.imagenSubida = JSON.parse(xhr.response).nombre //carga nombre de lo subido
+            }
+        })
+
+        formdata.append('foto', file)
+        xhr.send(formdata) //esto es interpretado por multer
+
+    }
+    /* -------------------------------------- */
 }
 
 function renderTablaAlta(validos, productos) {

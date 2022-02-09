@@ -21,3 +21,16 @@
         font-weight: 100;
     }
 }
+
+@media (max-width: 768px) {
+    .header-container{
+        height: 57vh;
+        &__video {
+            height: 49vh;
+        }
+
+        h1 {
+            font-size: 6vh;
+        }
+    }
+}

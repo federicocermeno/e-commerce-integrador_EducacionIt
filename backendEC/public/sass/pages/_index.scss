@@ -3,8 +3,12 @@
     padding-bottom: 10em;
 }
 
-.section-fixed section {
+.section-fixed .section-cards, .section-fixed .nosotrosmain{
     padding-top: 120px;    
+}
+
+.section-fixed .mainn {
+    padding-top: 107px;
 }
 
 .cards-container {
@@ -23,10 +27,17 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .cards-container {
         margin: 0;
         padding: 1em 1em;
+    }
 
+    .section-fixed .section-cards, .section-fixed .nosotrosmain{
+        padding-top: 0;    
+    }
+    
+    .section-fixed .mainn {
+        padding-top: 0;
     }
 }

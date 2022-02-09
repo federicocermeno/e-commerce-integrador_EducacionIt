@@ -12,11 +12,11 @@ class ControladorCarrito extends ModeloCarrito {
     }
 
     elProductoEstaEnElCarrito(producto) {
-        return this.carrito.filter(prod => prod._id == producto._id).length
+        return this.carrito.filter(prod => prod.id == producto.id).length
     }
     
     obtenerProductoDeCarrito(producto) {
-        return this.carrito.find(prod => prod._id == producto._id)
+        return this.carrito.find(prod => prod.id == producto.id)
     }
     
     agregarAlCarrito(producto) {
@@ -47,16 +47,20 @@ class ControladorCarrito extends ModeloCarrito {
         var elemSectionCarrito = document.getElementsByClassName('section-carrito')[0]
 
         elemSectionCarrito.innerHTML = '<h2>Realizando compra...</h2>'
-        await carritoService.guardarCarritoService(this.carrito)
+        const preference = await carritoService.guardarCarritoService(this.carrito)
         this.carrito = []
         localStorage.setItem('carrito',this.carrito)
     
         elemSectionCarrito.innerHTML = '<h2><b>COMPRA REALIZADA!</b></h2>'
     
-        setTimeout(() => {
+        setTimeout( async () => {
             elemSectionCarrito.classList.remove('section-carrito--visible')
             mostrarCarrito = false
-        },2000)
+
+            console.log(preference)
+            await renderPago(preference)
+
+        },0)
     }
 }
 

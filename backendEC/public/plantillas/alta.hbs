@@ -1,6 +1,6 @@
 {{#if productos.length }}
     <table>
-        <tr>
+        <tr class="thead">
             <th>nombre</th>
             <th>precio</th>
             <th>stock</th>
@@ -14,27 +14,27 @@
 
     {{#each productos}}
         <tr>
-            <td>{{nombre}}</td>
-            <td>${{precio}}</td>
-            <td>{{stock}}</td>
-            <td>{{marca}}</td>
-            <td>{{categoria}}</td>
-            <td>{{detalles}}</td>
-            <td> 
+            <td data-label="Stock">{{stock}}</td>
+            <td data-label="Nombre">{{nombre}}</td>
+            <td data-label="Precio">${{precio}}</td>
+            <td data-label="Marca">{{marca}}</td>
+            <td data-label="Categoria">{{categoria}}</td>
+            <td data-label="Detalles">{{detalles}}</td>
+            <td data-label="Foto"> 
                 <img src="{{foto}}" width="50" alt="{{nombre}}">
             </td>
             {{#if envio}}
-                <td>Si</td>
+                <td data-label="Envio">Si</td>
             {{else}}
                 <td>No</td>
             {{/if}}
-            <td>
+            <td data-label="Accion">
                     {{#if ../validos}}
-                        <button onclick="productoController.actualizarProducto('{{_id}}')" class="botonAlta">Actualizar</button>
+                        <button onclick="productoController.actualizarProducto('{{id}}')" class="botonAlta">Actualizar</button>
                     {{else}}
-                        <button disabled onclick="productoController.actualizarProducto('{{_id}}')" class="botonAlta">Actualizar</button>
+                        <button disabled onclick="productoController.actualizarProducto('{{id}}')" class="botonAlta">Actualizar</button>
                     {{/if}}
-                    <button onclick="productoController.borrarProducto('{{_id}}')" class="botonAlta">Borrar</button>
+                    <button onclick="productoController.borrarProducto('{{id}}')" class="botonAlta">Borrar</button>
                 </td>
             </tr>
         {{/each}}

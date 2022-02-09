@@ -16,7 +16,11 @@
   "author": "DS",
   "license": "MIT",
   "dependencies": {
+    "aos": "^2.3.4",
     "express": "^4.17.2",
-    "mongoose": "^6.1.7"
+    "joi": "^17.6.0",
+    "mercadopago": "^1.5.12",
+    "mongoose": "^6.1.7",
+    "multer": "^1.4.4"
   }
 }

@@ -205,6 +205,10 @@
 
     .query-section {
         padding-bottom: 40px;
+
+        &__container {
+            margin: 38px 3% 0;
+        }
     }
 
     .form-back {
@@ -213,4 +217,14 @@
             width: 300px;
         }
     }
+}
+
+@media (max-width: 1020px) {
+    .sticky{
+        position: static;
+     }
+
+     .section-fixed section {
+         padding-top: 0;
+     }
 }
